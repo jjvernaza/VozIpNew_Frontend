@@ -1,0 +1,142 @@
+$color-map-border: #ddd; 
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 80px;
+  max-width: 570px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(63, 43, 252, 0.315); /* Cambio en la propiedad box-shadow */
+}
+
+
+.form .title {
+  color: royalblue;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.form .input-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.form input {
+  outline: 0;
+  border: 1px solid rgb(116, 106, 255);
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+}
+
+.form textarea {
+  border-radius: 8px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  padding: 8px 14px;
+  border: 1px solid  rgb(116, 106, 255);
+}
+
+.form button {
+  align-self: flex-end;
+  padding: 8px;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.text {
+  max-width: 500px;
+  text-align: center;
+  color: #555; /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente */
+  line-height: 1.6; /* Altura de línea */
+  margin-bottom: 30px; /* Espaciado en la parte inferior */
+  font-family: 'Arial', sans-serif; /* Fuente */
+  margin-top: 180px;
+}
+
+.text p {
+  margin-bottom: 15px; /* Espaciado entre párrafos */
+}
+
+.text a {
+  color: royalblue; /* Color de los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Negrita */
+  transition: color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.text a:hover {
+  color: darkblue; /* Cambio de color al pasar el ratón sobre los enlaces */
+}
+
+
+.section-map {
+  padding: 4rem 0;
+  text-align: center;
+
+  h3 {
+    margin-top: 1.5em;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto;
+    border: 1px solid $color-map-border;
+    border-radius: 5px;
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px; /* Reemplaza con la imagen de tu marcador */
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      &:hover:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
