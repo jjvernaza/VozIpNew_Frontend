@@ -139,4 +139,20 @@ $color-map-border: #ddd;
     }
   }
 }
+// Media query para pantallas pequeñas
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas pequeñas */
+  }
 
+  .text {
+    max-width: 100%; /* Ajustar el ancho máximo al 100% en pantallas pequeñas */
+    text-align: center; /* Centrar el texto en pantallas pequeñas */
+    margin-bottom: 20px; /* Reducir el margen inferior en pantallas pequeñas */
+    margin-top: 50px; /* Ajuste del margen superior para pantallas pequeñas */
+  }
+
+  .form {
+    max-width: 100%; /* Ajustar el ancho máximo al 100% en pantallas pequeñas */
+  }
+}

@@ -1,0 +1,24 @@
+
+    <!-- SERVICIOS-->
+
+    <section class="section-SP">
+        <h3 class="section-title">Servicios y Productos que ofrece VozIpCompany & ICTLATAM</h3>
+      
+        <div class="card-container-SP">
+          <div *ngFor="let servicio of servicios" class="card-SP">
+            <div class="image-container-SP">
+              <img [src]="servicio.imagenUrl" alt="{{ servicio.titulo }}">
+            </div>
+            <div class="content-SP">
+              <a href="#" class="card-link-SP">
+                <span class="title-SP">{{ servicio.titulo }}</span>
+              </a>
+              <a class="action-SP" routerLink="/servicios" href="servicios">
+                Find out more
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      

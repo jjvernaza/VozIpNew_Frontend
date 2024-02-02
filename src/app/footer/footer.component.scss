@@ -6,91 +6,97 @@ $color-gray: #f2f2f2; // Nuevo color de fondo gris
 
 // Footer Styles
 .footer {
-    background-color: #163a81;;
-    color: $color-white;
-    padding: 2rem 0;
-    text-align: center; /* Centrar el contenido */
+  background-color: #163a81;
+  color: $color-white;
+  padding: 2rem 0;
+  text-align: center; /* Centrar el contenido */
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+      text-align: center; /* Centrar el contenido en pantallas pequeñas */
+    }
+    .footer-section {
+      margin-bottom:-50px; // Reducir el espacio entre secciones en pantallas pequeñas
+      text-align: center; /* Centrar el texto en pantallas pequeñas */
+    }
+  }
 }
 
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-left: 220px;
-  }
-  .footer-section {
-    flex: 1 1 300px;
-    margin-bottom: 1.5rem;
-    text-align: left; /* Alinear el texto a la izquierda */
-  }
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Ajustar a múltiples filas en dispositivos pequeños */
+  justify-content: space-around; /* Centrar los elementos en dispositivos pequeños */
+}
 
-  .footer-heading {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-list-item {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-link {
-    color: $color-white;
-    text-decoration: none;
-  
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  
-  .footer-text {
-    font-size: 14px;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar los elementos del formulario */
-  }
-  
-  .footer-input {
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid $color-secondary;
-    border-radius: 5px;
-  }
-  
-  .footer-button {
-    padding: 0.7em 1.4em;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #fff;
-    background-color: $color-primary;
-    transition: all 0.3s;
-  
-    &:hover {
-      background-color: darken($color-primary, 10%);
-    }
-  }
-  
-  .footer-bottom {
-    margin-top: 2rem;
-    text-align: center;
-  }
+.footer-section {
+  flex: 1 1 300px;
+  margin-bottom: 1.5rem; // Reducir el espacio entre secciones
+  text-align: left; /* Alinear el texto a la izquierda */
+}
 
-  hr {
-    color:$color-white;
+.footer-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link {
+  color: $color-white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
+}
+
+.footer-text {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar los elementos del formulario */
+}
+
+.footer-input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid $color-secondary;
+  border-radius: 5px;
+}
+
+.footer-button {
+  padding: 0.7em 1.4em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  background-color: $color-primary;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.footer-bottom {
+  padding-top: 1rem; // Añadir espacio encima del texto de derechos de autor
+}

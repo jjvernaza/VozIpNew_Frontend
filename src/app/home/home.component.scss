@@ -1,11 +1,3 @@
-// Variables
-
-$color-primary: #007bff;
-$color-secondary: #6c757d;
-$color-white: #fff;
-$color-gray: #f2f2f2;
-$color-map-border: #ddd; 
-
 // Body
 body {
   margin: 0;
@@ -17,303 +9,174 @@ body {
   color: black;
   text-align: center;
   padding: 3.5rem 0;
-  background-color: $color-gray; // Cambiado a un fondo gris
+  background: #f2f2f2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+  &-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    h5 {
+      color: #6B7280;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
-.header:hover {
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil al pasar el cursor */
-}
-
-.header-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem; /* Reducido el espacio entre h1 y h5 */
-}
-
-h5 {
-  color: #6B7280; /* Color de texto para h5 */
-  font-size: 1rem; /* Tamaño de fuente para h5 */
-  margin-bottom: 1.5rem; /* Aumentado el espacio entre h5 y el botón */
-}
-
-.button {
+#button-header {
   padding: 0.7em 1.4em;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   letter-spacing: 4px;
-  text-transform: uppercase;
-  cursor: pointer;
   color: #163a81;
   transition: all 1000ms;
   font-size: 13px;
   position: relative;
   overflow: hidden;
   outline: 2px solid #163a81;
+
+  @media (max-width: 768px) {
+    padding: 0.5em 1em;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  &:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #3e92cc;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #3e92cc;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+
+  &:hover::before {
+    width: 250%;
+  }
 }
 
-.button:hover {
-  color: #ffffff;
-  transform: scale(1.1);
-  outline: 2px solid #3e92cc;
-  box-shadow: 4px 5px 17px -4px #3e92cc;
-}
 
-.button::before {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background-color: #3e92cc;
-  transform: skewX(45deg);
-  z-index: -1;
-  transition: width 1000ms;
-}
-
-.button:hover::before {
-  width: 250%;
-}
-
-
-//imagen y seccion al principio
-/* Estilos para la nueva sección de texto e imagen */
+// Section Text Image
 .section-text-image {
-  background-color: $color-white; /* Fondo gris claro */
-  padding: 2rem;
+  background-color: #f7f7f7;
+  padding: 3rem;
   text-align: center;
 
   .text-image-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
 
-    .text {
-      flex: 1;
-      text-align: left;
+      .text {
+        text-align: center;
 
-      h3 {
-        color: black;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        h3 {
+          color: #222;
+          font-size: 1.7rem;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: #333;
+          font-size: 1rem;
+        }
       }
 
-      p {
-        color: #333;
-        font-size: 1rem;
+      .image-portatil {
+        margin-top: 20px;
+        text-align: center;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          animation: floatAnimation 3s ease-in-out infinite;
+
+          @keyframes floatAnimation {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(20px);
+            }
+          }
+        }
       }
     }
 
-    .image-portatil {
-      flex: 1;
-      max-width: 50%;
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      img {
-        width: 65%;
-        height: auto;
-        animation: floatAnimation 3s ease-in-out infinite; /* Animación continua de 3 segundos */
+      .text {
+        flex: 1;
+        text-align: left;
 
-        @keyframes floatAnimation {
-          0%, 100% {
-            transform: translateY(0); /* En el inicio y fin, no hay traslación */
-          }
-          50% {
-            transform: translateY(20px); /* A la mitad de la animación, traslación hacia abajo */
+        h3 {
+          color: #222;
+          font-size: 1.7rem;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: #333;
+          font-size: 1rem;
+        }
+      }
+
+      .image-portatil {
+        flex: 1;
+        margin-top: 0;
+        text-align: right;
+
+        img {
+          width: 70%;
+          height: auto;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          animation: floatAnimation 3s ease-in-out infinite;
+
+          @keyframes floatAnimation {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(20px);
+            }
           }
         }
       }
     }
   }
 }
-
-
-
-// Main
-.main {
-  background-color: #fff;
-}
-
-// Image
-.image {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
-// Section
-.section {
-  padding: 2rem 0;
-}
-
-// H3
-.h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-// Ul
-.ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-// Li
-.li {
-  margin-bottom: 1rem;
-}
-
-// Button
-.btn {
-  color: $color-white;
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: $color-primary;
-}
-
-.btn-outline-primary {
-  border: 1px solid $color-primary;
-}
-
-//cards
-
-.section-SP {
-  background-color: $color-gray; /* Fondo gris claro */
-  padding: 2rem;
-  text-align: center; /* Centrar el texto */
-}
-
-.section-SP h3 {
-  color: #333; /* Cambiar el color del texto */
-  margin-bottom: 20px; /* Ajustar el espacio entre el título y las tarjetas */
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card {
-  max-width: 300px;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid #f2f2f2;
-  margin-bottom: 20px;
-  flex: 1;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease; /* Agregar transición de escala */
-}
-
-.card:hover {
-  transform: scale(1.05); /* Efecto de escala al pasar el ratón */
-}
-
-.card a {
-  text-decoration: none;
-}
-
-.content {
-  padding: 1.1rem;
-}
-
-.image {
-  object-fit: cover;
-  width: 100%;
-  height: 150px;
-  background-color: rgb(239, 205, 255);
-}
-
-.title {
-  color: #111827;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  font-family: 'Roboto', sans-serif;
-}
-
-.desc {
-  margin-top: 0.5rem;
-  color: #6B7280;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-family: 'Lato', sans-serif;
-}
-
-.action {
-  display: inline-flex;
-  margin-top: 1rem;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: bold;
-  align-items: center;
-  gap: 0.25rem;
-  background-color: #007bff;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.action span {
-  transition: .3s ease;
-}
-
-.action:hover span {
-  transform: translateX(4px);
-}
-
-// Sección del mapa
-.section-map {
-  padding: 4rem 0;
-  text-align: center;
-
-  h3 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .map-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px; /* Ancho máximo para pantallas grandes */
-    margin: 0 auto;
-    border: 1px solid $color-map-border;
-    border-radius: 5px;
-
-    iframe {
-      width: 100%;
-      height: 350px;
-      border: none;
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px; /* Reemplaza con la imagen de tu marcador */
-        opacity: 0.5;
-        transition: opacity 0.3s ease-in-out;
-      }
-
-      &:hover:before {
-        opacity: 1;
-      }
-    }
-  }
-}
-

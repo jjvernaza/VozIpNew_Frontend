@@ -1,0 +1,14 @@
+    
+    <!-- NOS ESPECIALIZAMOS EN -->
+
+    <section class="section section-beneficios" id="section-beneficio">
+        <h3>CAPACITADOS EN:</h3>
+        <div class="card-container-beneficio">
+          <div *ngFor="let beneficio of beneficios.slice(0, 3); let i = index" class="card-beneficio" [id]="'card-beneficio-' + i">
+            <div class="card-body-beneficio">
+              <h5 class="card-title-beneficio" id="card-title-beneficio-{{ i }}">{{ beneficio.titulo }}</h5>
+              <p class="card-text-beneficio" id="card-text-beneficio-{{ i }}">{{ beneficio.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </section>

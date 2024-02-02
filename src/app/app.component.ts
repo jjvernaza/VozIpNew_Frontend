@@ -4,6 +4,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { CardsServicesComponent } from './servicios/cards-services/cards-services.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { FooterComponent } from './footer/footer.component';
     NavBarComponent,
     HomeComponent,
     FooterComponent,
-    RouterModule],
+    RouterModule,
+    CardsServicesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

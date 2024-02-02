@@ -1,0 +1,52 @@
+// Section Beneficios
+.section-beneficios {
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border-radius: 5px;
+  
+    h3 {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+  
+    .card-container-beneficio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-around; // Cambio de justify-content a space-around
+      align-items: stretch; // Ajusta la altura de las tarjetas para que coincida con la del contenedor
+  
+      .card-beneficio {
+        flex: 1; // Ajusta el ancho de la tarjeta para que ocupe el espacio disponible
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+  
+        .card-body-beneficio {
+          padding: 1.5rem;
+          text-align: left;
+        }
+  
+        .card-title-beneficio {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #222;
+          margin-bottom: 0.5rem;
+        }
+  
+        .card-text-beneficio {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #333;
+        }
+      }
+    }
+  }
+  

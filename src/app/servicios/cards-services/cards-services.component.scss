@@ -1,0 +1,83 @@
+// Section SP
+.section-SP {
+  padding: 4rem 0;
+  text-align: center;
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+  .card-container-SP {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center; // Centra las tarjetas horizontalmente
+    .card-SP {
+      flex: 1 1 300px; // Establece el ancho fijo para las tarjetas
+      margin-bottom: 2rem; // Añade espacio entre las filas de tarjetas
+      border-radius: 0.5rem;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #f2f2f2;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+      a {
+        text-decoration: none; // Elimina el subrayado de los enlaces
+        color: inherit; // Hereda el color del texto del contenedor padre
+      }
+      .content-SP {
+        padding: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Centra el contenido verticalmente
+        .title-SP {
+          color: #111827;
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+          font-weight: 600;
+          font-family: 'Roboto', sans-serif;
+          margin-bottom: 1rem; // Añade espacio entre el título y la descripción
+        }
+        .desc {
+          color: #6B7280;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-family: 'Lato', sans-serif;
+          text-align: center; // Centra el texto de la descripción
+          margin-bottom: 1rem; // Añade espacio entre la descripción y el enlace
+        }
+        .action-SP {
+          display: inline-flex;
+          margin-top: 1rem;
+          color: #fff;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: bold;
+          align-items: center;
+          gap: 0.25rem;
+          background-color: #007bff;
+          padding: 4px 8px;
+          border-radius: 0.25rem;
+          text-decoration: none; // Elimina el subrayado del enlace
+        }
+      }
+      .image-container-SP {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

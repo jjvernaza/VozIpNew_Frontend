@@ -1,26 +1,62 @@
-.service-technical {
-    margin-top: 60px;
+// Estilos generales
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+// Estilos para la sección de presentación
+.hero-section {
+  padding: 4rem 0;
+  background-color: #f4f4f4;
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
-  
-  .service-technical h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
-  
-  .service-technical .row {
-    margin-bottom: 20px;
+}
+
+// Estilos para la sección de servicios
+.services-section {
+  padding: 4rem 0;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
-  
-  .service-technical .col-md-6 {
-    padding: 0 20px;
+  .service-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
   }
-  
-  .service-technical h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+}
+
+// Estilos para la sección de contacto
+.contact-section {
+  padding: 4rem 0;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
-  
-  .service-technical p {
-    line-height: 1.5;
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
   }
+  .btn-primary {
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
   
